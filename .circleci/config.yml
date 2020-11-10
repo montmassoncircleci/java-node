@@ -10,4 +10,4 @@ jobs:
           
      - run: |
          echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
-         docker push company/app:$CIRCLE_BRANCH     
+         docker push montmassoncircleci/java-node:$CIRCLE_BRANCH     
