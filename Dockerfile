@@ -1,4 +1,4 @@
-FROM docker-all.devops.etat-ge.ch/node:10-buster
+FROM node:10-buster
 
 RUN curl --silent --show-error --location --fail --retry 3 --output /tmp/zulu8.50.0.21-ca-jdk8.0.272-linux_x64.tar.gz https://cdn.azul.com/zulu/bin/zulu8.50.0.21-ca-jdk8.0.272-linux_x64.tar.gz && \
   tar xf zulu8.50.0.21-ca-jdk8.0.272-linux_x64.tar.gz -C /opt/ && \
