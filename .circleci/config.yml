@@ -1,0 +1,13 @@
+version: 2
+jobs:
+ build:
+   machine: true
+   steps:
+     - checkout
+     # build the application image
+     - run: docker build -t montmassoncircleci/java-node:$CIRCLE_BRANCH .
+     # deploy the image
+          
+     - run: |
+         echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
+         docker push montmassoncircleci/java-node:$CIRCLE_BRANCH     
